@@ -5,7 +5,7 @@ public class ListaEncadeada<T> {
     private No<T> prim, ult;
     private int quant;
     private final boolean ordenada;
-    private Comparator<T> cmp;
+    private final Comparator<T> cmp;
 
     public ListaEncadeada(boolean ehOrdenada, Comparator<T> comp) {
         this.prim = this.ult = null;
@@ -70,8 +70,12 @@ public class ListaEncadeada<T> {
     public boolean ContemElemento(T valor) {
         No<T> aux = this.prim;
         while (aux != null) {
-            if (aux.getValor().equals(valor)) {
+            if (cmp.compare(aux.getValor(), valor) == 0) {
                 return true;
+            }
+
+            if (this.ordenada && cmp.compare(aux.getValor(), valor) > 0) {
+                return false;
             }
             aux = aux.getProx();
         }
@@ -82,8 +86,9 @@ public class ListaEncadeada<T> {
     public boolean remover(T valor) {
         No<T> aux = this.prim;
         No<T> ant = null;
+
         while (aux != null) {
-            if (aux.getValor().equals(valor)) {
+            if (cmp.compare(aux.getValor(), valor) == 0) {
                 if (aux == this.prim){
                     this.prim = this.prim.getProx();
                     if (aux == this.ult)
@@ -96,6 +101,9 @@ public class ListaEncadeada<T> {
                 }
                 this.quant--;
                 return true;
+            }
+            else if (this.ordenada && cmp.compare(aux.getValor(), valor) > 0) {
+                return false;
             }
             ant = aux;
             aux = aux.getProx();
