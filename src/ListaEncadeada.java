@@ -78,6 +78,7 @@ public class ListaEncadeada<T> {
         return false;
     }
 
+
     public boolean remover(T valor) {
         No<T> aux = this.prim;
         No<T> ant = null;
