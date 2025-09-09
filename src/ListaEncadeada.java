@@ -67,7 +67,7 @@ public class ListaEncadeada<T> {
 
     }
 
-    public boolean ContemElemento(T valor) {
+    public boolean contemElemento(T valor) {
         No<T> aux = this.prim;
         while (aux != null) {
             if (cmp.compare(aux.getValor(), valor) == 0) {
@@ -75,11 +75,26 @@ public class ListaEncadeada<T> {
             }
 
             if (this.ordenada && cmp.compare(aux.getValor(), valor) > 0) {
-                return false;
+                break;
             }
             aux = aux.getProx();
         }
         return false;
+    }
+
+    public T pesquisar(T valor){
+        No<T> aux = this.prim;
+        while (aux != null) {
+            if (cmp.compare(aux.getValor(), valor) == 0) {
+                return aux.getValor();
+            }
+
+            if (this.ordenada && cmp.compare(aux.getValor(), valor) > 0) {
+                break;
+            }
+            aux = aux.getProx();
+        }
+        return null;
     }
 
 

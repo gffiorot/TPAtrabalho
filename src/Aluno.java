@@ -7,6 +7,7 @@ public class Aluno {
         this.matricula = mat;
     }
 
+    public Aluno() {}
 
 
     @Override
