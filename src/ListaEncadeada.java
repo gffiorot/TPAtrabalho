@@ -23,7 +23,7 @@ public class ListaEncadeada<T> {
             addEmOrd(novoValor);
     }
 
-    public void addForaOrd(T novoValor) {
+    private void addForaOrd(T novoValor) {
         No<T> novo = new No<T>(novoValor);
         if (this.prim == null){
             this.prim = novo;
@@ -35,7 +35,7 @@ public class ListaEncadeada<T> {
         this.quant++;
     }
 
-    public void addEmOrd(T novoValor) {
+    private void addEmOrd(T novoValor) {
         No<T> novo = new No<T>(novoValor);
         No<T> atual, ant;
         atual = this.prim;
