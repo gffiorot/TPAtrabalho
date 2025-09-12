@@ -61,12 +61,12 @@ public class Entrada {
         inicio = System.nanoTime();
         linkedL.add(alu);
         fim = System.nanoTime();
-        System.out.println("LinkedList Tempo total: " + (fim-inicio) + " ns");
+        System.out.println("LinkedList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
 
         inicio = System.nanoTime();
         arrayL.add(alu);
         fim = System.nanoTime();
-        System.out.println("ArrayList Tempo total: " + (fim-inicio) + " ns");
+        System.out.println("ArrayList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
     }
 
     public void InserirInicio(){
@@ -79,12 +79,12 @@ public class Entrada {
         inicio = System.nanoTime();
         linkedL.addFirst(alu);
         fim = System.nanoTime();
-        System.out.println("LinkedList Tempo total: " + (fim-inicio) + " ns");
+        System.out.println("LinkedList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
 
         inicio = System.nanoTime();
         arrayL.addFirst(alu);
         fim = System.nanoTime();
-        System.out.println("ArrayList Tempo total: " + (fim-inicio) + " ns");
+        System.out.println("ArrayList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
     }
 
     public void InserirMeio(){
@@ -97,12 +97,12 @@ public class Entrada {
         inicio = System.nanoTime();
         linkedL.add((linkedL.size()/2),alu);
         fim = System.nanoTime();
-        System.out.println("LinkedList Tempo total: " + (fim-inicio) + " ns");
+        System.out.println("LinkedList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
 
         inicio = System.nanoTime();
         arrayL.add((arrayL.size()/2),alu);
         fim = System.nanoTime();
-        System.out.println("ArrayList Tempo total: " + (fim-inicio) + " ns");
+        System.out.println("ArrayList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
     }
 
     public void BuscaUlt(){
@@ -115,12 +115,12 @@ public class Entrada {
             inicio = System.nanoTime();
             Aluno a1 = linkedL.getLast();
             fim = System.nanoTime();
-            System.out.println("LinkedList Tempo total: " + (fim - inicio) + " ns");
+            System.out.println("LinkedList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
 
             inicio = System.nanoTime();
             Aluno a2 = arrayL.getLast();
             fim = System.nanoTime();
-            System.out.println("ArrayList Tempo total: " + (fim - inicio) + " ns");
+            System.out.println("ArrayList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
         }
     }
 
@@ -134,12 +134,12 @@ public class Entrada {
             inicio = System.nanoTime();
             Aluno a1 = linkedL.get(linkedL.size()-2);
             fim = System.nanoTime();
-            System.out.println("LinkedList Tempo total: " + (fim - inicio) + " ns");
+            System.out.println("LinkedList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
 
             inicio = System.nanoTime();
             Aluno a2 = arrayL.get(linkedL.size()-2);
             fim = System.nanoTime();
-            System.out.println("ArrayList Tempo total: " + (fim - inicio) + " ns");
+            System.out.println("ArrayList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
         }
     }
 
@@ -152,12 +152,12 @@ public class Entrada {
             inicio = System.nanoTime();
             Aluno a1 = linkedL.get(linkedL.size()/2);
             fim = System.nanoTime();
-            System.out.println("LinkedList Tempo total: " + (fim - inicio) + " ns");
+            System.out.println("LinkedList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
 
             inicio = System.nanoTime();
             Aluno a2 = arrayL.get(arrayL.size()/2);
             fim = System.nanoTime();
-            System.out.println("ArrayList Tempo total: " + (fim - inicio) + " ns");
+            System.out.println("ArrayList Tempo total: " + (fim-inicio)/1000 + " microsegundos");
         }
     }
 }
